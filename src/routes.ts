@@ -13,4 +13,7 @@ router.get('/courses/newest', coursesController.newest)
 router.get('/courses/search', coursesController.search)
 router.get('/courses/:id', coursesController.show)
 
+router.get('/episodes/stream', coursesController.search)
+
+
 export { router }
