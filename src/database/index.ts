@@ -10,6 +10,7 @@ export const database = new Sequelize({
   username: 'onebitflix',
   password: 'onebitflix',
 	define: {
+    // configuração para formatar o camelCase
     underscored: true
   }
 })

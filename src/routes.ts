@@ -1,10 +1,16 @@
 import express from 'express'
 import { categoriesController } from './controllers/categoryController'
 import { coursesController } from './controllers/coursesController'
+import { authController } from './controllers/authController'
 
 
 const router = express.Router()
 
+
+router.post('/auth/register', authController.register)
+
+
+// GET
 router.get('/categories', categoriesController.index)
 router.get('/categories/:id', categoriesController.show)
 
