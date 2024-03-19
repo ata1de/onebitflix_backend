@@ -3,6 +3,7 @@ import { categoriesController } from './controllers/categoryController'
 import { coursesController } from './controllers/coursesController'
 import { authController } from './controllers/authController'
 import { ensureAuth, ensureAuthViaQuery } from './middlewares/auth'
+import { favoritesController } from './controllers/favoritesController'
 
 
 const router = express.Router()
@@ -10,6 +11,7 @@ const router = express.Router()
 //POST
 router.post('/auth/register', authController.register)
 router.post('/auth/login', authController.login)
+router.post('/favorites', ensureAuth, favoritesController.save)
 
 // GET
 router.get('/categories', ensureAuth ,categoriesController.index)
