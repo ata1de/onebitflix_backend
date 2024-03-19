@@ -9,8 +9,11 @@ const app = express()
 
 app.use(express.static('public'))
 
-app.use(adminJs.options.rootPath, adminJsRouter)
+app.use(express.json())
+
 app.use(router)
+
+app.use(adminJs.options.rootPath, adminJsRouter)
 
 const PORT = process.env.port || 3000
 

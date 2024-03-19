@@ -6,9 +6,9 @@ import { authController } from './controllers/authController'
 
 const router = express.Router()
 
-
+//POST
 router.post('/auth/register', authController.register)
-
+router.post('/auth/login', authController.login)
 
 // GET
 router.get('/categories', categoriesController.index)
