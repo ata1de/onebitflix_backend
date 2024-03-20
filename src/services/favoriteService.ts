@@ -40,5 +40,16 @@ export const favoriteService = {
         courseId
       }
     })
+  },
+
+  isFavorited: async (userId: number, courseId: number) => {
+    const favorited = await Favorite.findOne({
+      where: {
+        userId,
+        courseId
+      }
+    })
+
+    return favorited !== null ? true : false
   }
 }
