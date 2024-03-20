@@ -24,5 +24,11 @@ router.get('/courses/:id', ensureAuth , coursesController.show)
 
 router.get('/episodes/stream', ensureAuthViaQuery,coursesController.search)
 
+router.get('/favorites', ensureAuth, favoritesController.index)
+
+// DELETE
+router.delete('/favorites', ensureAuth, favoritesController.delete)
+
+
 
 export { router }
