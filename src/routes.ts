@@ -31,6 +31,8 @@ router.get('/favorites', ensureAuth, favoritesController.index)
 
 // DELETE
 router.delete('/favorites', ensureAuth, favoritesController.delete)
+router.delete('/likes', ensureAuth, likesController.destroy)
+
 
 
 

@@ -1,6 +1,6 @@
 // src/services/likeService.ts
 
-import { Like } from "../models"
+import { Favorite, Like } from "../models"
 
 export const likeService = {
   create: async (userId: number, courseId: number) => {
@@ -10,5 +10,14 @@ export const likeService = {
     })
 
     return like
+  },
+
+  delete: async (userId: number, courseId: number) => {
+    await Like.destroy({
+      where: {
+        userId,
+        courseId
+      }
+    })
   }
 }
