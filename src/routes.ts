@@ -34,6 +34,7 @@ router.get('/episodes/:id/watchTime', ensureAuth, episodesController.getWatchTim
 
 router.get('/favorites', ensureAuth, favoritesController.index)
 
+router.get('/users/current', ensureAuth, usersController.show)
 router.get('/users/current/watching', ensureAuth, usersController.watching)
 
 
