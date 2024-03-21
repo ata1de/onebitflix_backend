@@ -75,9 +75,9 @@ export const User = database.define<UserInstance, User>('users', {
         }
       }
     }
-  })
+})
 
-  User.prototype.checkPassword = function (password:string, callbackfn: CheckPasswordCallback ) {
+User.prototype.checkPassword = function (password:string, callbackfn: CheckPasswordCallback ) {
     // this corresponde a instancia onde está executando
     bcrypt.compare(password, this.password, (err, isSame) => {
       // se tiver um erro ele chama a função e retorna false, que não é igual
