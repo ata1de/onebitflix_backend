@@ -42,6 +42,11 @@ router.get('/users/current/watching', ensureAuth, usersController.watching)
 router.delete('/favorites', ensureAuth, favoritesController.delete)
 router.delete('/likes', ensureAuth, likesController.destroy)
 
+//PUT
+router.put('/users/current', ensureAuth, usersController.update)
+router.put('/users/current/password', ensureAuth, usersController.updatePassword)
+
+
 
 
 
