@@ -42,6 +42,8 @@ export const courseService = {
             limit: 10,
             order: [['created_at', 'DESC']]
         })
+
+        return courses
     },
 
     getTopTenByLikes: async () => {
