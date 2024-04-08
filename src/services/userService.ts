@@ -33,10 +33,11 @@ export const userService = {
             'id',
             ['first_name', 'firstName'],
             ['last_name', 'lastName'],
+            ['created_at', 'createdAt'],
             'phone',
             'birth',
             'email',
-            'password'
+            'password',
           ],
           where: { email }
         })

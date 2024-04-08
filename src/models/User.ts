@@ -15,14 +15,14 @@ export interface User {
   email: string
   password: string
   role: 'admin' | 'user'
+  // created_at: Date
 }
 
 export interface UserCreationAttributes extends Optional<User, 'id'> {}
 
-// adicionar as instancias do user o método checkPassoword
 export interface UserInstance extends Model<User, UserCreationAttributes>, User {
-  Episodes?: EpisodeInstance[]
-  checkPassword: (password:string, callbackfn: CheckPasswordCallback ) => void
+  Episodes?: EpisodeInstance[],
+  checkPassword: (password:string, callbackfn: CheckPasswordCallback ) => void,
 }
 
 export const User = database.define<UserInstance, User>('users', {
@@ -66,7 +66,11 @@ export const User = database.define<UserInstance, User>('users', {
     validate: {
         isIn: [['admin', 'user']]
     }
-  }
+  },
+  // created_at: {
+  //   allowNull: false,
+  //   type: DataTypes.DATE
+  // },
 }, {
     hooks: {
       beforeSave: async (user) => {
@@ -76,6 +80,7 @@ export const User = database.define<UserInstance, User>('users', {
       }
     }
 })
+
 
 User.prototype.checkPassword = function (password:string, callbackfn: CheckPasswordCallback ) {
     // this corresponde a instancia onde está executando
@@ -88,3 +93,5 @@ User.prototype.checkPassword = function (password:string, callbackfn: CheckPassw
       }
     })
   }
+
+
