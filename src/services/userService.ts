@@ -67,7 +67,7 @@ export const userService = {
          returning: true, 
         // importante para executar o hook de cryptografar a senha
          individualHooks: true })
-
+         
       return updatedUsers[0]
     },
 

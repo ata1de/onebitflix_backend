@@ -42,13 +42,13 @@ export const usersController = {
     // PUT/user/current/password
     updatePassword: async (req: AuthenticatedRequest, res: Response) => {
         const user = req.user
-        const { currentPassowrd, newPassword } = req.body
+        const { currentPassword, newPassword } = req.body
 
         if (!user) {
             return res.status(401).json({ message: 'User not authorized' })
           }
 
-        user.checkPassword(currentPassowrd, async(err, isSame) =>{
+        user.checkPassword(currentPassword, async(err, isSame) =>{
             try {
                 if (err) throw err
                 if (!isSame) throw new Error('Wrong Password!')
