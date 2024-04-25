@@ -18,6 +18,8 @@
     "adminjs": "^6.8.7",
     "bcrypt": "~5.0.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "env-var": "^7.4.1",
     "express": "^4.19.2",
     "express-formidable": "~1.2.0",
     "jsonwebtoken": "^9.0.2",

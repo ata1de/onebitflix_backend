@@ -1,14 +1,9 @@
 // src/database/index.ts
 
 import { Sequelize } from 'sequelize'
+import { DATABASE_URL } from '../config/enviroment'
 
-export const database = new Sequelize({
-  dialect: 'postgres',
-  host: 'localhost',
-  port: 5432,
-  database: 'onebitflix_development',
-  username: 'onebitflix',
-  password: 'onebitflix',
+export const database = new Sequelize(DATABASE_URL ,{
 	define: {
     // configuração para formatar o camelCase
     underscored: true

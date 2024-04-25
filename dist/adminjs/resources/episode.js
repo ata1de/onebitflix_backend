@@ -19,6 +19,7 @@ exports.episodeResourceFeatures = [
         provider: {
             local: {
                 bucket: path_1.default.join(__dirname, '..', '..', '..', 'uploads'),
+                opts: {}
             }
         },
         properties: {

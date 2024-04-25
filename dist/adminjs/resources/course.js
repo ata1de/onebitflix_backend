@@ -19,6 +19,7 @@ exports.courseResourceFeatures = [
         provider: {
             local: {
                 bucket: path_1.default.join(__dirname, '../../../public'),
+                opts: {}
             }
         },
         properties: {
