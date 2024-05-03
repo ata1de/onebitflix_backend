@@ -1,4 +1,4 @@
-# Onebitflix 🚩🖥
+<h1 align='center'>Onebitflix 🚩🖨</h1>
 
 Onebitflix é o projeto final do curso Onebitcode, no qual se baseia em uma aplicação para cursos de programação, cada curso estando em uma categoria e contendo episodios. Desing totalmente inspirado na Netflix (o nome entrega tudo😉).
 
