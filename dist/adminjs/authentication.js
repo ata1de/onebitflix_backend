@@ -16,6 +16,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.authtenticationOptions = void 0;
 const models_1 = require("../models");
 const bcrypt_1 = __importDefault(require("bcrypt"));
+const enviroment_1 = require("../config/enviroment");
 exports.authtenticationOptions = {
     authenticate: (email, password) => __awaiter(void 0, void 0, void 0, function* () {
         const user = yield models_1.User.findOne({ where: { email } });
@@ -27,5 +28,5 @@ exports.authtenticationOptions = {
         }
         return false;
     }),
-    cookiePassword: 'senha-do-cookie'
+    cookiePassword: enviroment_1.ADMINJS_COOKIE_PASSWORD,
 };
